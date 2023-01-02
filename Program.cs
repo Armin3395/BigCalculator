@@ -1,5 +1,5 @@
 ﻿//This is da big calculator
-//Currently, negative powers and divisions are normal sized not BIG
+//Currently, negative powers and divisions and sqrts are normal sized not BIG
 
 using System.Numerics;
 
