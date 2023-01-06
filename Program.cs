@@ -1,5 +1,5 @@
 ﻿//This is da big calculator
-//Currently, negative powers and divisions and sqrts are normal sized not BIG
+//Currently, negative powers and divisions are normal sized not BIG
 
 using System.Numerics;
 
@@ -11,6 +11,7 @@ decimal num3;
 decimal num4;
 //decimal num5;
 double num6;
+double num7;
 string rip;
 program();
 void program()
@@ -64,24 +65,33 @@ void program()
             break;
         case 'p':
             Console.WriteLine("Enter The Base Number");
-            num1 = Convert.ToInt32(Console.ReadLine());
+            num6 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Enter The Power");
-            num2 = Convert.ToInt32(Console.ReadLine());
+            num7 = Convert.ToDouble(Console.ReadLine());
             ans = 1;
-            if (num2 >= 0)
+            if (num7 >= 0 && num6 % 1 != 0)
             {
-                ans = BigInteger.Pow(num1, num2);
-                Console.WriteLine(ans);
-                //for (int i = 1; i <= num2; i++)
-                //{
-                 //   ans = ans * (BigInteger)num1;
-                //}
-                //Console.WriteLine(ans);
+                num6 = Math.Pow(num6, num7);
+                Console.WriteLine(num6);
             }
-            else
+            if (num7 < 0 && num6 % 1 != 0)
+            {
+                num6 = Math.Pow(num6, num7);
+                Console.WriteLine(num6);
+            }
+            if (num7 >= 0 && num6 % 1 == 0)
+            {
+                
+                for (int i = 1; i <= num7; i++)
+                {
+                   ans = ans * (BigInteger)num6;
+                }
+                Console.WriteLine(ans);
+            }
+            if (num7 < 0 && num6 % 1 == 0)
             {
                 //simple power not BIG
-                num6 = Math.Pow(num1, num2);
+                num6 = Math.Pow(num6, num7);
                 Console.WriteLine(num6);
             }
 
