@@ -5,8 +5,8 @@ using System.Numerics;
 
 char op;
 BigInteger ans;
-int num1;
-int num2;
+decimal num1;
+decimal num2;
 decimal num3;
 decimal num4;
 //decimal num5;
@@ -30,27 +30,34 @@ void program()
     {
         case '+':
             Console.WriteLine("Enter The First Number");
-            num1 = Convert.ToInt32(Console.ReadLine());
+            num1 = Convert.ToDecimal(Console.ReadLine());
             Console.WriteLine("Enter The Second Number");
-            num2 = Convert.ToInt32(Console.ReadLine());
-            ans =  (BigInteger) num1 + (BigInteger) num2;
-            Console.WriteLine(ans);
+            num2 = Convert.ToDecimal(Console.ReadLine());
+            //ans =  (BigInteger) num1 + (BigInteger) num2;
+            Console.WriteLine(num1 + num2);
             break;
         case '-':
             Console.WriteLine("Enter The First Number");
-            num1 = Convert.ToInt32(Console.ReadLine());
+            num1 = Convert.ToDecimal(Console.ReadLine());
             Console.WriteLine("Enter The Second Number");
-            num2 = Convert.ToInt32(Console.ReadLine());
-            ans = (BigInteger)num1 - (BigInteger)num2;
-            Console.WriteLine(ans);
+            num2 = Convert.ToDecimal(Console.ReadLine());
+            //ans = (BigInteger)num1 - (BigInteger)num2;
+            Console.WriteLine(num1 - num2);
             break;
         case '*':
             Console.WriteLine("Enter The First Number");
-            num1 = Convert.ToInt32(Console.ReadLine());
+            num1 = Convert.ToDecimal(Console.ReadLine());
             Console.WriteLine("Enter The Second Number");
-            num2 = Convert.ToInt32(Console.ReadLine());
-            ans = (BigInteger) num1 * (BigInteger) num2;
-            Console.WriteLine(ans);
+            num2 = Convert.ToDecimal(Console.ReadLine());
+            if (num1 % 1 == 0 && num2 % 1 == 0)
+            {
+                ans = (BigInteger)num1 * (BigInteger)num2;
+                Console.WriteLine(ans);
+            }
+            else
+            {
+                Console.WriteLine(num1 * num2);
+            }
             break;
         case '/':
             Console.WriteLine("Enter The First Number");
